@@ -11,19 +11,17 @@ import (
 func CalculatePoints(pointRequest models.Point) ([]models.Point, error) {
 	var pointsIntoBlockWise []models.Point
 
-	pointRequested := models.NewPoint(pointRequest.X, pointRequest.Y, pointRequest.Distance)
-
 	pointsOrigin, err := loadPointsOrigin(configs.GetPathFileToLoadPoints())
 
 	if err != nil {
-		log.Println("Error on get points origin")
+		log.Printf("Error on get points origin %s", err.Error())
 		return nil, err
 	}
 
 	for _, pointOrigin := range pointsOrigin {
-		distanceCalculated := calculateManhattanDistance(pointRequested, pointOrigin)
-		if pointRequested.Distance >= distanceCalculated {
-			pointsIntoBlockWise = append(pointsIntoBlockWise, models.NewPoint(pointOrigin.X, pointOrigin.Y, distanceCalculated))
+		distanceCalculated := calculateManhattanDistance(pointRequest, pointOrigin)
+		if pointRequest.Distance >= distanceCalculated {
+			pointsIntoBlockWise = append(pointsIntoBlockWise, *models.NewPoint(pointOrigin.X, pointOrigin.Y, distanceCalculated))
 		}
 	}
 

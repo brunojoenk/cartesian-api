@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/brunojoenk/cartesian-api/internal/routers"
+	"github.com/brunojoenk/cartesian-api/internal/utils"
 )
 
 var TWENTY_SECONDS = 20 * time.Second
@@ -16,7 +17,7 @@ func NewServer() http.Server {
 	router := routers.CreateRouters()
 	return http.Server{
 		Handler:      router,
-		Addr:         ":" + getPort(),
+		Addr:         utils.ConcatStrings(":", getPort()),
 		WriteTimeout: TWENTY_SECONDS,
 		ReadTimeout:  TWENTY_SECONDS,
 	}

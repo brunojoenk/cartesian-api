@@ -47,7 +47,7 @@ func getParameters(request *http.Request) (*models.Point, error) {
 		return nil, errors.New("Invalid query parameter: distance")
 	}
 
-	return &models.Point{X: x, Y: y, Distance: distance}, nil
+	return models.NewPoint(x, y, distance), nil
 
 }
 
