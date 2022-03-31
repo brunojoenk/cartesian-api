@@ -36,7 +36,7 @@ make tests-coverage
 ```
 
 ### APIs
-- To calculate points
+#### To calculate points
 ```
 /api/points?x={integerParam}&y={integerParam}&distance={integerParam}
 ```
@@ -45,7 +45,7 @@ make tests-coverage
 ```
 https://cartesian-api.herokuapp.com/api/points/?x=1&y=1&distance=20 
 ```
-or when run locally:
+#### or when run locally:
 ```
 http://localhost:8080/api/points/?x=1&y=1&distance=20
 ```
