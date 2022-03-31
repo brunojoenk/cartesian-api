@@ -50,3 +50,8 @@ func getParameters(request *http.Request) (*models.Point, error) {
 	return &models.Point{X: x, Y: y, Distance: distance}, nil
 
 }
+
+func HandleHome(writer http.ResponseWriter, request *http.Request) {
+	writer.WriteHeader(http.StatusOK)
+	json.NewEncoder(writer).Encode("Welcome to cartesian API")
+}
