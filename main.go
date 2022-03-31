@@ -12,6 +12,6 @@ func main() {
 
 	os.Setenv("PATH_DATA_POINTS", "data/points.json")
 
-	log.Printf("Server started at address: %s", server.Addr)
+	log.Printf("Server started at port: %s", server.Addr)
 	log.Fatal(server.ListenAndServe())
 }
