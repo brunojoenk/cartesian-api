@@ -43,9 +43,9 @@ make tests-coverage
 
 #### An example: 
 ```
-https://cartesian-api.herokuapp.com/api/points/?x=1&y=1&distance=20 
+https://cartesian-api.herokuapp.com/api/points?x=1&y=1&distance=20 
 ```
 #### or when run locally:
 ```
-http://localhost:8080/api/points/?x=1&y=1&distance=20
+http://localhost:8080/api/points?x=1&y=1&distance=20
 ```
